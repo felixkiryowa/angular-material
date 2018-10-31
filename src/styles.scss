@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~font-awesome/css/font-awesome.css";
+
+@include mat-core();
+
+$primary: mat-palette($mat-lime, 500);
+$accent:  mat-palette($mat-lime, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$config: mat-typography-config();
+
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+body {
+  font-family: mat-font-family($config);
+  font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid rgba(32, 77, 32, 0.623);
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid rgb(148, 27, 27);
+}
+
+.example-full-width {
+  width: 100%;
+}

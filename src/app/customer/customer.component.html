@@ -1,0 +1,29 @@
+<h1>Clients list</h1>
+  <table class="table table-hover table-bordered table-condensed" cellspacing="0">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cust of customers">
+        <td>{{cust.id}}</td>
+        <td>{{cust.firstname}}</td>
+        <td>{{cust.lastname}}</td>
+        <td>{{cust.age}}</td>
+        <td>
+          <!-- <a [routerLink]="['/customers', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a> -->
+          <button class="btn btn-sm btn-info"  (click)="EditCustomer(cust)"><i class="fa fa-pencil-square-o"></i> Edit</button> | <span class="badge badge-dark">{{cust.firstname}}</span>
+        </td>
+        <td>
+            <!-- <a [routerLink]="['/customers', cust.id]" style="color:black"><span class="badge badge-dark">{{cust.id}}</span> -> {{ cust.firstname }}</a> -->
+            <button class="btn btn-sm btn-danger"  (click)="DeleteCustomer(cust)"><i class="fa fa-trash"></i> Delete</button> 
+          </td>
+      </tr>
+    </tbody>
+  </table>
